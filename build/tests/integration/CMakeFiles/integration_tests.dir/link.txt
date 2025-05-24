@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/integration_tests.dir/MainIntegrationTests.cpp.o -o integration_tests  ../../libHL7Core.a -ldicomhero6 -ldicomheroObjects6 -lxerces-c /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libodbc.so -lpugixml 

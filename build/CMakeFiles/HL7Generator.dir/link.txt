@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/HL7Generator.dir/src/main.cpp.o -o HL7Generator  libHL7Core.a /usr/lib/libdicomhero6.so.6.2.1.0 -ldicomheroObjects6 -lxerces-c /usr/lib/x86_64-linux-gnu/libodbc.so -lpugixml 

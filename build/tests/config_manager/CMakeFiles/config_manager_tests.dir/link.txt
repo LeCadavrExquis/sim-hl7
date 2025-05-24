@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/config_manager_tests.dir/ConfigManagerTests.cpp.o CMakeFiles/config_manager_tests.dir/__/__/src/config_manager/ConfigManager.cpp.o -o config_manager_tests  -lpugixml /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 

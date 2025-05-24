@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/hl7_generator_tests.dir/HL7MessageGeneratorTests.cpp.o -o hl7_generator_tests  ../../libHL7Core.a -lxerces-c /usr/lib/x86_64-linux-gnu/libodbc.so -lpugixml /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 
