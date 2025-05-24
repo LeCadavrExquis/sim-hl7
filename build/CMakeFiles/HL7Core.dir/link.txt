@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHL7Core.a CMakeFiles/HL7Core.dir/src/config_manager/ConfigManager.cpp.o CMakeFiles/HL7Core.dir/src/db_connector/DatabaseService.cpp.o CMakeFiles/HL7Core.dir/src/dicom_parser/DicomParser.cpp.o CMakeFiles/HL7Core.dir/src/hl7_generator/HL7MessageGenerator.cpp.o CMakeFiles/HL7Core.dir/src/ui/ConsoleUI.cpp.o
+/usr/bin/ranlib libHL7Core.a

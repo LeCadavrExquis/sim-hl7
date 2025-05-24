@@ -1,0 +1,66 @@
+<!-- This is an EXAMPLE configuration file. 
+     It's not directly used by the current C++ stubs unless you implement logic to parse it.
+     It can hold parameters for HL7 message generation.
+-->
+<HL7Config>
+    <!-- Database Connection Details -->
+    <Database>
+        <ODBC_DSN>HL7_DB_DSN</ODBC_DSN> <!-- Replace with your actual DSN -->
+        <User>your_db_user</User>         <!-- Replace with your DB user -->
+        <Password>your_db_password</Password> <!-- Replace with your DB password -->
+    </Database>
+
+    <!-- General Application Settings -->
+    <GeneralSettings>
+        <OutputPath>./output/</OutputPath> <!-- Directory where generated XML files will be saved -->
+    </GeneralSettings>
+
+    <!-- HL7 Message Header Defaults -->
+    <HL7Defaults>
+        <SendingApplication>MyScintigraphyApp</SendingApplication>
+        <SendingFacility>MyHospital</SendingFacility>
+        <ReceivingApplication>ClinicalDataRepo</ReceivingApplication>
+        <ReceivingFacility>CentralRepo</ReceivingFacility>
+        <SecurityText>N</SecurityText> <!-- Or other relevant security information -->
+        <LanguageCode>en-US</LanguageCode>
+        <RealmCode>US</RealmCode> <!-- Or your specific country/realm code -->
+        <Title>Scintigraphy Study Report</Title>
+        <!-- For ConfidentialityCode, the ConfigManager currently reads the 'code', 'codeSystem', and 'displayName' attributes from a single node -->
+        <!-- However, the ConfigManager.cpp is implemented to read separate child nodes. This needs to be consistent. -->
+        <!-- For now, sticking to separate nodes as implemented in C++ -->
+        <ConfidentialityCode>N</ConfidentialityCode>
+        <ConfidentialityCodeSystem>2.16.840.1.113883.5.25</ConfidentialityCodeSystem>
+        <ConfidentialityDisplayName>Normal</ConfidentialityDisplayName>
+    </HL7Defaults>
+
+    <!-- Organization Details (for Author, Custodian, ServiceProviderOrganization, etc.) -->
+    <OrganizationDetails>
+        <Name>Radiology Department, MyHospital</Name>
+        <IdRootOid>1.2.3.4.5.6.7.890.1</IdRootOid> <!-- Replace with your organization's OID -->
+        <Telecom>tel:+1-555-123-4567</Telecom> <!-- Example: use="WP" value="tel:+1-555-123-4567" - attributes not handled by current simple getNodeText -->
+        <Address>
+            <Street>123 Healing Way</Street>
+            <City>Metropolis</City>
+            <State>NY</State>
+            <Zip>10001</Zip>
+            <Country>US</Country>
+        </Address>
+    </OrganizationDetails>
+
+    <!-- Key OIDs for CDA Structure and Identifiers -->
+    <!-- These are examples. VERIFY AND REPLACE with OIDs appropriate for your implementation guide! -->
+    <KeyOIDs>
+        <PatientIdRoot>1.3.6.1.4.1.21367.2005.3.7</PatientIdRoot> <!-- Example: IHE PIX/PDQ Patient ID -->
+        <DocumentIdRoot>1.2.3.4.5.6.7.890.2.1</DocumentIdRoot> <!-- Replace with your document root OID -->
+        <SetIdRoot>1.2.3.4.5.6.7.890.2.2</SetIdRoot> <!-- Replace with your set ID root OID -->
+        <TemplateIdRoot>2.16.840.1.113883.10.20.22.1.1</TemplateIdRoot> <!-- CDA R2.1 US Realm Header -->
+        <LoincSystemOid>2.16.840.1.113883.6.1</LoincSystemOid>
+
+        <!-- Example of a custom OID entry -->
+        <!-- <CustomOid assigningAuthority="IHEXDSREGISTRY.PATIENTID">
+            <OID>1.3.6.1.4.1.21367.2017.2.5.88</OID>
+            <Description>Example custom OID for XDS Registry</Description>
+        </CustomOid> -->
+    </KeyOIDs>
+
+</HL7Config>

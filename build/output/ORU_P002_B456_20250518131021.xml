@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../cda_r2_normativewebedition2010/infrastructure/cda/CDA.xsd">
+  <realmCode code="PL" />
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <id root="2.25.0.0.0.0" extension="d52aafba-3e0b-4b69-afa1-ff5a8b4ed655" />
+  <code code="UNK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="Unknown" displayName="Unknown" />
+  <title>Report - Head CT</title>
+  <effectiveTime value="20250518131021+0200" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal" />
+  <languageCode code="pl-PL" />
+  <recordTarget>
+    <patientRole>
+      <id extension="P002" root="2.25.0.0.0.0" />
+      <patient>
+        <name>
+          <given>Smith</given>
+          <family>Jane</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1008" />
+        <birthTime value="19900202" />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="20250518131021+0200" />
+    <assignedAuthor>
+      <id root="2.25.0.0.0.0" extension="Unknown" />
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Unknown</manufacturerModelName>
+        <softwareName>Unknown</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="2.25.0.0.0.0" extension="Unknown" />
+        <name>Unknown</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <componentOf>
+    <encompassingEncounter>
+      <id root="2.25.0.0.0.0" extension="B456" />
+      <effectiveTime>
+        <low value="20240502113000" />
+      </effectiveTime>
+      <location>
+        <healthCareFacility>
+          <id root="2.25.0.0.0.0" extension="Unknown" />
+          <location classCode="PLC" determinerCode="INSTANCE">
+            <name>Unknown</name>
+          </location>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <code code="18748-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnostic Imaging Report Section" />
+          <title>Head CT</title>
+          <text>
+            <paragraph>Study Description: Head CT. Modality: CT. Study UID: S002.</paragraph>
+          </text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

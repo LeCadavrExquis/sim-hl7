@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/db_connector_tests.dir/DatabaseServiceTests.cpp.o -o db_connector_tests  ../../libHL7Core.a -ldicomhero6 -ldicomheroObjects6 /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libodbc.so -lpugixml 

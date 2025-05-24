@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HL7Config>
+    <Database>
+        <ODBC_DSN>simdb_dsn</ODBC_DSN>
+        <User>simuser</User>
+        <Password>simpassword</Password>
+    </Database>
+    <GeneralSettings>
+        <OutputPath>output/</OutputPath>
+        <CdaXsdPath>/app/cda_r2_normativewebedition2010/infrastructure/cda/CDA.xsd</CdaXsdPath>
+        <RealmCode>PL</RealmCode>
+        <TypeIdExtension>POCD_HD000040</TypeIdExtension>
+        <DocumentIdRootOid>2.25.0.0.0.0</DocumentIdRootOid> <!-- Example OID, consider using a specific one for your organization -->
+        <DocumentCode>
+            <code>UNK</code>
+            <codeSystem>2.16.840.1.113883.5.1008</codeSystem>
+            <codeSystemName>Unknown</codeSystemName>
+            <displayName>Unknown</displayName>
+        </DocumentCode>
+        <DocumentTitle>Clinical Document</DocumentTitle> <!-- Default title, can be more specific -->
+        <ConfidentialityCode>
+            <code>N</code>
+            <codeSystem>2.16.840.1.113883.5.25</codeSystem>
+            <displayName>Normal</displayName>
+        </ConfidentialityCode>
+        <LanguageCode>pl-PL</LanguageCode>
+        <OrganizationOid>2.25.0.0.0.0</OrganizationOid> <!-- Example OID, replace with actual Organization OID -->
+        <SendingFacility>Default Sending Facility</SendingFacility>
+        <DefaultSendingApplication>DefaultSendingApp</DefaultSendingApplication>
+    </GeneralSettings>
+    <TemplateIds>
+        <TemplateId>
+            <root>2.16.840.1.113883.10.20.22.1.1</root> <!-- Example: US Realm Header -->
+            <extension></extension> 
+        </TemplateId>
+        <TemplateId>
+            <root>2.16.840.1.113883.10.20.22.1.2</root> <!-- Example: US Realm Header -->
+            <extension></extension>
+        </TemplateId>
+    </TemplateIds>
+    <patientIdRootOid>2.16.840.1.113883.19.5.99999.1</patientIdRootOid>
+    <studyIdRootOid>2.16.840.1.113883.19.5.99999.2</studyIdRootOid>
+    <genderCodeSystem>2.16.840.1.113883.5.1</genderCodeSystem>
+    <Author>
+        <AuthorIdRootOid>2.25.0.0.0.0</AuthorIdRootOid> <!-- Can be same as OrganizationOid or specific author root -->
+        <AuthorIdExtension>AuthorExt</AuthorIdExtension>
+        <AuthorDeviceManufacturer>Default Manufacturer</AuthorDeviceManufacturer>
+        <AuthorDeviceSoftwareName>Default Software</AuthorDeviceSoftwareName>
+    </Author>
+    <Custodian>
+        <CustodianOrgIdRootOid>2.25.0.0.0.0</CustodianOrgIdRootOid> <!-- Can be same as OrganizationOid -->
+        <CustodianOrgIdExtension>CustodianExt</CustodianOrgIdExtension>
+        <CustodianOrgName>Default Custodian Organization</CustodianOrgName>
+    </Custodian>
+    <Encounter>
+        <EncounterIdRootOid>2.25.0.0.0.0</EncounterIdRootOid> <!-- OID for encounter IDs -->
+        <EncounterTypeCode>
+            <code>IMP</code> <!-- Example: Inpatient Encounter -->
+            <codeSystem>2.16.840.1.113883.5.4</codeSystem> <!-- HL7 ActCode -->
+            <displayName>Inpatient Encounter</displayName>
+        </EncounterTypeCode>
+    </Encounter>
+    <Location>
+        <LocationFacilityIdRootOid>2.25.0.0.0.0</LocationFacilityIdRootOid> <!-- Can be same as OrganizationOid -->
+        <LocationFacilityIdExtension>FacilityExt</LocationFacilityIdExtension>
+        <LocationFacilityName>Default Facility Name</LocationFacilityName>
+    </Location>
+    <ReportSection>
+        <ReportSectionCode>
+            <code>18748-4</code>
+            <codeSystem>2.16.840.1.113883.6.1</codeSystem>
+            <codeSystemName>LOINC</codeSystemName>
+            <displayName>Diagnostic Imaging Report Section</displayName>
+        </ReportSectionCode>
+    </ReportSection>
+    <!-- Add other HL7/CDA parameters as needed -->
+</HL7Config>

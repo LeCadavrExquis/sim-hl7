@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: simuser
+      POSTGRES_PASSWORD: simpassword
+      POSTGRES_DB: simdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      ODBCINI: /etc/odbc.ini
+    volumes:
+      - ./output:/app/output 
+      - ./cda_r2_normativewebedition2010:/app/cda_r2_normativewebedition2010:ro
+    stdin_open: true
+    tty: true
+volumes:
+  pgdata:

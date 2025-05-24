@@ -1,0 +1,4 @@
+/home/filip/Dokumenty/Studia/SIM/HL7-projekt/build/CMakeFiles/HL7Core.dir
+/home/filip/Dokumenty/Studia/SIM/HL7-projekt/build/CMakeFiles/HL7Generator.dir
+/home/filip/Dokumenty/Studia/SIM/HL7-projekt/build/CMakeFiles/edit_cache.dir
+/home/filip/Dokumenty/Studia/SIM/HL7-projekt/build/CMakeFiles/rebuild_cache.dir
