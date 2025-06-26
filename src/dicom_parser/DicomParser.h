@@ -13,12 +13,14 @@ public:
     bool loadFile(const std::string& filePath);
     Patient getPatientInfo() const;
     Study getStudyInfo() const;
+    void parseDicomDirectory(const std::string& directoryPath);
 
 private:
     std::optional<dicomhero::DataSet> dataSet; // Changed from DcmFileFormat to std::optional<dicomhero::DataSet>
     // Helper to extract string values, adapted for DicomHero6
     std::string getString(dicomhero::tagId_t tagValue) const;
     // Consider adding a helper for potentially multi-valued or specific types if needed
+    std::vector<std::string> getAllFilesInDirectory(const std::string& rootDir);
 };
 
 #endif // DICOMPARSER_H

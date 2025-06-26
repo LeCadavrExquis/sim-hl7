@@ -3,6 +3,13 @@
 #include <iostream>
 #include <iomanip> // Required for std::hex
 #include <optional> // Required for std::optional
+#include <filesystem>
+#include <vector>
+#include <string>
+#include "DicomParser.h"
+
+namespace fs = std::filesystem;
+
 
 DicomParser::DicomParser() {
     // Constructor for DicomParser
@@ -82,3 +89,39 @@ Study DicomParser::getStudyInfo() const {
     return s;
 }
 
+// Rekursywne wczytywanie wszystkich plików z folderu z danymi
+std::vector<std::string> DicomParser::getAllFilesInDirectory(const std::string& rootDir) {
+    std::vector<std::string> files;
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(rootDir)) {
+        if (entry.path().extension() == ".dcm") {
+            files.push_back(entry.path().string());
+        }
+    }
+    return files;
+}
+
+// Parsowanie wszystkich plików DICOM w podfloderach wskazanego folderu danych (./data/dicom_folder)
+void DicomParser::parseDicomDirectory(const std::string& directoryPath) {
+    std::vector<std::string> dicomFiles;
+
+    try {
+        for (const auto& entry : fs::recursive_directory_iterator(directoryPath)) {
+            if (entry.is_regular_file()) {
+                dicomFiles.push_back(entry.path().string());
+            }
+        }
+    } catch (const std::filesystem::filesystem_error& e) {
+        std::cerr << "Filesystem error: " << e.what() << std::endl;
+        return;
+    }
+
+    for (const auto& file : dicomFiles) {
+        DicomParser parser;
+        if (parser.loadFile(file)) {
+            Patient p = parser.getPatientInfo();
+            Study s = parser.getStudyInfo();
+
+            // TUTAJ DODAĆ OBSŁUGĘ DODAWANIA DO BAZY DANYCH
+        }
+    }
+}

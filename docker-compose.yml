@@ -23,6 +23,7 @@ services:
     volumes:
       - ./output:/app/output 
       - ./cda_r2_normativewebedition2010:/app/cda_r2_normativewebedition2010:ro
+      - ./data/dicom_folder:/app/input_data
     stdin_open: true
     tty: true
 volumes:
